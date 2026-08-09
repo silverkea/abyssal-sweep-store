@@ -79,9 +79,9 @@ Add more `--member` flags for additional services as needed.
 openspec workset open abyssal-sweep --tool code
 ```
 
-This opens all member repos together as a multi-folder VS Code workspace. Claude Code can then be opened from within VS Code with full context of all repos.
+This opens all member repos together as a multi-folder VS Code workspace, useful for cross-repo navigation, search, and the Claude Code VS Code extension.
 
-> Note: `--tool claude` (direct Claude Code CLI open) is temporarily unavailable while OpenSpec reworks CLI-agent integration. Use `--tool code` in the meantime.
+> Note: `--tool claude` (Claude Code CLI with full multi-repo context) is temporarily unavailable while OpenSpec reworks CLI-agent integration. Until it's restored, run `claude` from whichever repo you're working in — the OpenSpec CLI resolves the store by registered ID regardless of which directory you launch from.
 
 ---
 
