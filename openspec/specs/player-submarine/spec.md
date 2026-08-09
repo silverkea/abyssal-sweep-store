@@ -2,6 +2,8 @@
 
 Defines the behavior of the player-controlled Eco-Submarine entity: its movement, single-shot sonar firing, and integrity-based life system.
 
+## Requirements
+
 ### Requirement: Horizontal keyboard movement
 The Eco-Submarine SHALL move horizontally across the seafloor in response to keyboard input. Left Arrow or A key SHALL move the submarine left; Right Arrow or D key SHALL move the submarine right. The submarine SHALL not move beyond the left or right screen boundary.
 
@@ -50,3 +52,15 @@ The submarine SHALL start each game session with 3 Submarine Integrity points. T
 #### Scenario: Initial integrity
 - **WHEN** a new game session begins
 - **THEN** the submarine starts with exactly 3 integrity points
+
+### Requirement: Submarine collision bounds match scaled sprite size
+The submarine's collision detection area SHALL correspond to its rendered sprite dimensions
+at 150% of the baseline asset size. The hitbox SHALL not use the unscaled asset dimensions.
+
+#### Scenario: Collision bounds reflect scaled width
+- **WHEN** the submarine is rendered at 150% of its baseline width
+- **THEN** the collision detection area spans the same horizontal extent as the rendered sprite
+
+#### Scenario: Collision bounds reflect scaled height
+- **WHEN** the submarine is rendered at 150% of its baseline height
+- **THEN** the collision detection area spans the same vertical extent as the rendered sprite
