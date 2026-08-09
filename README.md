@@ -56,21 +56,19 @@ Adjust the path to wherever you cloned the store repo.
 
 ### 4. Create your workset
 
-A workset is a personal, local grouping of repos that opens together in Claude Code. It is never committed — each person creates their own.
+A workset is a personal, local grouping of repos that opens together in your editor. It is never committed — each person creates their own.
 
 **Product / design:**
 ```bash
 openspec workset create abyssal-sweep \
-  --member store=~/work/abyssal-sweep/abyssal-sweep-store \
-  --tool claude
+  --member store=~/work/abyssal-sweep/abyssal-sweep-store
 ```
 
 **Developers:**
 ```bash
 openspec workset create abyssal-sweep \
   --member store=~/work/abyssal-sweep/abyssal-sweep-store \
-  --member abyssal-sweep=~/work/abyssal-sweep/abyssal-sweep \
-  --tool claude
+  --member abyssal-sweep=~/work/abyssal-sweep/abyssal-sweep
 ```
 
 Add more `--member` flags for additional services as needed.
@@ -78,10 +76,12 @@ Add more `--member` flags for additional services as needed.
 ### 5. Open your workset
 
 ```bash
-openspec workset open abyssal-sweep
+openspec workset open abyssal-sweep --tool code
 ```
 
-This opens all member repos together in a single Claude Code session.
+This opens all member repos together as a multi-folder VS Code workspace. Claude Code can then be opened from within VS Code with full context of all repos.
+
+> Note: `--tool claude` (direct Claude Code CLI open) is temporarily unavailable while OpenSpec reworks CLI-agent integration. Use `--tool code` in the meantime.
 
 ---
 
